@@ -14,6 +14,7 @@ export default class extends M3RecordArray {
 
   replaceContent(idx, removeAmt, newItems) {
     super.replaceContent(idx, removeAmt, newItems);
+    // TODO: don't invalidate prop here
     // update attr in model data
     // and model state
     this._model._setAttribute(this._key, this);

@@ -54,3 +54,7 @@ export default class extends RecordArray {
     return this.content && this.content.length !== undefined ? this.content.length : 0;
   }
 }
+
+export function associateRecordWithRecordArray(record, recordArray) {
+  record._internalModel._recordArrays.add(recordArray);
+}

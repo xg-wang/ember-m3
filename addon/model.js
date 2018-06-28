@@ -17,6 +17,7 @@ import {
   resolveValue,
   resolveReferencesWithInternalModels,
   computeAttributeReference,
+  isResolvedValue as _isResolvedValue,
 } from './resolve-attribute-util';
 
 const { propertyDidChange } = Ember;
@@ -77,10 +78,6 @@ export class EmbeddedInternalModel {
   createSnapshot() {
     return new EmbeddedSnapshot(this.record);
   }
-}
-
-function _isResolvedValue(value) {
-  return value && value.constructor && value.constructor.isModel;
 }
 
 function disallowAliasSet(object, key, value) {

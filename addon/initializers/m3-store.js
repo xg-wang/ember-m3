@@ -24,9 +24,10 @@ export function extendStore(Store) {
       return SchemaManager.includesModel(modelName) || this._super(modelName);
     },
 
-    modelFactoryFor(modelName) {
-      return this._modelFactoryFor(modelName);
-    },
+    // TODO: need to remove this for ember-data some version or other
+    // modelFactoryFor(modelName) {
+    //   return this._modelFactoryFor(modelName);
+    // },
 
     _modelFactoryFor(modelName) {
       if (SchemaManager.includesModel(modelName)) {
